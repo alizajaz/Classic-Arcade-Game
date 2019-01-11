@@ -1,9 +1,19 @@
+
+
 var minrowVal = 0;
-var maxrowVal = 60;
+var maxrowVal = 50;
 var mincolVal = 0;
-var maxcolVal = 50;
-var minstep = 1;
+var maxcolVal = 40;
+var minsteps = 1;
 var maxsteps = 6;
+
+var row = [0,10,20,30,40,50];//assigning value of array in x-axis
+var column = [0,10,20,30,40]; // assigning value in y axis
+ var steps = [1,2,3,4,5,6];//total player step
+
+ var bugstep = [3,4,5];//if collision reset
+var winnerstep = [6];//if reach you are winner
+ var initialplayerstep=[1];//player start from step 1 and move forward 
 
 // Enemies our player must avoid
 var Enemy = function() {
