@@ -7,7 +7,7 @@ var maxcolVal = 40;
 var minsteps = 1;
 var maxsteps = 6;
 
-var row = [0,10,20,30,40,50];//assigning value of array in x-axis
+var row = [0,10,20,30,40,50];//assigning value  in x-axis
 var column = [0,10,20,30,40]; // assigning value in y axis
  var steps = [1,2,3,4,5,6];//total player step
 
