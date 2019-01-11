@@ -9,6 +9,7 @@ var maxsteps = 6;
 var Enemy = function() {
    this.x =x; // Variables applied to each of our instances go here,
     this.y =y;// we've provided one for you to get started
+   this.move=move;
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
