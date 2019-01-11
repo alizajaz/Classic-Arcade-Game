@@ -1,7 +1,14 @@
+var minrowVal = 0;
+var maxrowVal = 60;
+var mincolVal = 0;
+var maxcolVal = 50;
+var minstep = 1;
+var maxsteps = 6;
+
 // Enemies our player must avoid
 var Enemy = function() {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
+   this.x =x; // Variables applied to each of our instances go here,
+    this.y =y;// we've provided one for you to get started
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -9,6 +16,7 @@ var Enemy = function() {
 };
 
 // Update the enemy's position, required method for game
+
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
