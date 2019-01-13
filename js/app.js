@@ -1,22 +1,28 @@
-
-ar allEnemies =[];
-// Enemies our player must avoid
-var Enemy = function Enemy (x, y, move) {
+var Enemy = function(x, y, move) {
   // Variables applied to each of our instances go here,
   // we've provided one for you to get started
     this.x = x;// setting initial properties of object
     this.y = y;
     this.move = move;
-     this.totalstep = 505;// 505 is canvas width
-     this.eachstep = 101;// 505/5,505 divided by column  here 505 is canvas.width and 5 is column number
-     this.reset = -101;
+     // this.totalstep = 505;// 505 is canvas width
+     // this.eachstep = 101;// 505/5,505 divided by column  here 505 is canvas.width and 5 is column number
+     // this.reset = -101;
+     this.minyaxis =0;
+     this.maxyaxis=60;
+     this.yaxis=[0,10,20,30,40,50,60];
+     this.enemylocation=[30,40,50];
+     this.minxaxis=0;
+     this.maxxaxis=50;
+     this.xaxis=[0,10,20,30,40,50];
+     this.resetxaxis=-10;
+
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    // this.sprite = 'images/enemy-bug.png';
+     this.sprite = 'images/enemy-bug.png';
     };
- var allenemy = new Enemy();
-
-allEnemies.push (allenemy);
+//  var allenemy = new Enemy();
+//
+// allEnemies.push(allenemy);
 
 
 
@@ -26,18 +32,54 @@ Enemy.prototype.update = function(dt) {
 // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-
-
-    if(this.x < this.totalstep){
+    if(this.x < this.maxxaxis){//since bug is moving to x-axis direction, the maxxaxis is 50
         this.x += move * dt;
-
-
     }
     else{
-  x= this.reset;
+this.x= this.resetxaxis;
     }
-
 };
+
+
+// var allEnemies =[];
+// // Enemies our player must avoid
+// var Enemy = function Enemy (x, y, move) {
+//   // Variables applied to each of our instances go here,
+//   // we've provided one for you to get started
+//     this.x = x;// setting initial properties of object
+//     this.y = y;
+//     this.move = move;
+//      this.totalstep = 505;// 505 is canvas width
+//      this.eachstep = 101;// 505/5,505 divided by column  here 505 is canvas.width and 5 is column number
+//      this.reset = -101;
+//     // The image/sprite for our enemies, this uses
+//     // a helper we've provided to easily load images
+//     // this.sprite = 'images/enemy-bug.png';
+//     };
+//  var allenemy = new Enemy();
+
+// allEnemies.push (allenemy);
+
+
+
+// // Update the enemy's position, required method for game
+// // Parameter: dt, a time delta between ticks
+// Enemy.prototype.update = function(dt) {
+// // You should multiply any movement by the dt parameter
+//     // which will ensure the game runs at the same speed for
+//     // all computers.
+
+
+//     if(this.x < this.totalstep){
+//         this.x += move * dt;
+
+
+//     }
+//     else{
+//   x= this.reset;
+//     }
+
+// };
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
