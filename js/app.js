@@ -22,9 +22,9 @@ var Enemy = function(x, y, move) {
     // a helper we've provided to easily load images
      this.sprite = 'images/enemy-bug.png';
     };
-//  var allenemy = new Enemy();
-//
-// allEnemies.push(allenemy);
+  var myEnemy = new Enemy();
+
+ allEnemies.push(myEnemy);
 
 
 
