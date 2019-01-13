@@ -1,3 +1,5 @@
+var allEnemies =[];
+
 var Enemy = function(x, y, move) {
   // Variables applied to each of our instances go here,
   // we've provided one for you to get started
