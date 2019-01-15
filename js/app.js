@@ -1,107 +1,73 @@
-var allEnemies =[];
-
-var Enemy = function(x, y, move) {
-  // Variables applied to each of our instances go here,
-  // we've provided one for you to get started
-    this.x = x;// setting initial properties of object
-    this.y = y;
+// Enemies our player must avoid
+var Enemy = function () {
+    this.x = 0;// Variables applied to each of our instances go here,
+    this.y = 0;// we've provided one for you to get started
     this.move = move;
-     // this.totalstep = 505;// 505 is canvas width
-     // this.eachstep = 101;// 505/5,505 divided by column  here 505 is canvas.width and 5 is column number
-     // this.reset = -101;
-     this.minyaxis =0;
-     this.maxyaxis=60;
-     this.yaxis=[0,10,20,30,40,50,60];
-     this.enemylocation=[30,40,50];
-     this.minxaxis=0;
-     this.maxxaxis=50;
-     this.xaxis=[0,10,20,30,40,50];
-     this.resetxaxis=-10;
-
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-     this.sprite = 'images/enemy-bug.png';
-    };
-  var myEnemy = new Enemy();
-
- allEnemies.push(myEnemy);
-
-
+    this.sprite = 'images/enemy-bug.png';
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
-// You should multiply any movement by the dt parameter
+
+Enemy.prototype.update = function (dt) {
+    // You should multiply any movement by the dt parameter
+    this.x += this.move * dt;
     // which will ensure the game runs at the same speed for
     // all computers.
-    if(this.x < this.maxxaxis){//since bug is moving to x-axis direction, the maxxaxis is 50
-        this.x += move * dt;
-    }
-    else{
-this.x= this.resetxaxis;
-    }
 };
 
-
-// var allEnemies =[];
-// // Enemies our player must avoid
-// var Enemy = function Enemy (x, y, move) {
-//   // Variables applied to each of our instances go here,
-//   // we've provided one for you to get started
-//     this.x = x;// setting initial properties of object
-//     this.y = y;
-//     this.move = move;
-//      this.totalstep = 505;// 505 is canvas width
-//      this.eachstep = 101;// 505/5,505 divided by column  here 505 is canvas.width and 5 is column number
-//      this.reset = -101;
-//     // The image/sprite for our enemies, this uses
-//     // a helper we've provided to easily load images
-//     // this.sprite = 'images/enemy-bug.png';
-//     };
-//  var allenemy = new Enemy();
-
-// allEnemies.push (allenemy);
-
-
-
-// // Update the enemy's position, required method for game
-// // Parameter: dt, a time delta between ticks
-// Enemy.prototype.update = function(dt) {
-// // You should multiply any movement by the dt parameter
-//     // which will ensure the game runs at the same speed for
-//     // all computers.
-
-
-//     if(this.x < this.totalstep){
-//         this.x += move * dt;
-
-
-//     }
-//     else{
-//   x= this.reset;
-//     }
-
-// };
-
 // Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
+Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-// class player{
-//   construction (x, y, move) {
-//     this.x = x;
-//     this.y = y;
+var Player = function () {
+  this.x = 202;
+  this.y = 406;
+  this.sprite = 'images/char-pink-girl.png';
+};
 
-//   }
-// }
 
-// Now instantiate your objects.
+Player.prototype.update = function (dt) {
+};
+
+
+Player.prototype.render = function () {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+Player.prototype.handleInput = function (playerarrowkeys) {
+
+
+  if (playerarrowkeys ==='left' && this.x>0){
+          this.x -= 101;
+      } else if (playerarrowkeys === 'right' && this.x< 359) {
+          this.x += 101;
+        //  console.log(playerarrowkeys);
+      } else if (playerarrowkeys === 'up' && this.y > 0) {
+          this.y -= 83;
+      } else if (playerarrowkeys=== 'down' && this.y < 405) {
+          this.y += 83;
+        }
+
+      }
+
+//Now instantiate your objects.the process of creating objects from a class is called instantiation
+//It means allocating memory for a new  object and returning a reference to that memory.
+var enemyA = new Enemy(-101, 145);
+var enemyB = new Enemy(-101, 62);
+var enemyC = new Enemy(-101, 230);
+
 // Place all enemy objects in an array called allEnemies
+var allEnemies = [enemyA, enemyB, enemyC];
+ // allEnemies.push(enemyA, enemyB, enemyC);
 // Place the player object in a variable called player
+var player = new Player();
 
 
 
@@ -117,40 +83,3 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
-window.logGame = function(){
-  console.log(enemy)
-}
-
-
-
-// var minrowVal = 0;
-// var maxrowVal = 50;
-// var mincolVal = 0;
-// var maxcolVal = 40;
-// var minsteps = 1;
-// var maxsteps = 6;
-//
-// var row = [0,10,20,30,40,50];//assigning value of array in x-axis
-// var column = [0,10,20,30,40]; // assigning value in y axis
-//  var steps = [1,2,3,4,5,6];//total player step
-//
-//  var bugstep = [3,4,5];//if collision reset
-// var winnerstep = [6];//if reach you are winner
-//  var initialplayerstep=[1];//player start from step 1 and move forward
-
-//  canvas.width = 505;
-//  canvas.height = 606;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
