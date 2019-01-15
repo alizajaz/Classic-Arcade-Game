@@ -5,8 +5,6 @@ var Enemy = function (x, y, move) {
     // this.move = move;
     this.resetenemy = -101;
     this.canvaswidth = 505;
-    this.min = Math.ceil(100);
-    this.max = Math.floor(600);
     this.move = Math.floor(Math.random() * (600 - 100)) + 100;
 
     // The image/sprite for our enemies, this uses
