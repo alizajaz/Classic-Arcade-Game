@@ -59,9 +59,11 @@ Player.prototype.handleInput = function (playerarrowkeys) {
 
 //Now instantiate your objects.the process of creating objects from a class is called instantiation
 //It means allocating memory for a new  object and returning a reference to that memory.
-var enemyA = new Enemy(-101, 145);
-var enemyB = new Enemy(-101, 62);
-var enemyC = new Enemy(-101, 230);
+
+var enemyA = new Enemy(100, 50, 145);
+ var enemyB = new Enemy(100, 220, 50);
+ var enemyC = new Enemy(100, 130, 200);
+var allEnemies = [enemyA, enemyB, enemyC];
 
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [enemyA, enemyB, enemyC];
