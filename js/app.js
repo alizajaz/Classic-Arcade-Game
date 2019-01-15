@@ -1,8 +1,14 @@
 // Enemies our player must avoid
-var Enemy = function (x,y,move) {
-    this.x = x;// Variables applied to each of our instances go here,
-    this.y = y;// we've provided one for you to get started
-    this.move = move;
+var Enemy = function (x, y, move) {
+    this.x = x; // Variables applied to each of our instances go here,
+    this.y = y; // we've provided one for you to get started
+    // this.move = move;
+    this.resetenemy = -101;
+    this.canvaswidth = 505;
+    this.min = Math.ceil(60);
+    this.max = Math.floor(400);
+    this.move =  Math.floor(Math.random() * (400 - 60 + 1)) + 60;
+
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -13,9 +19,18 @@ var Enemy = function (x,y,move) {
 
 Enemy.prototype.update = function (dt) {
     // You should multiply any movement by the dt parameter
-    this.x += this.move * dt;
+
+    if (this.x < this.canvaswidth ) {
+        this.x += this.move * dt;
+
+    //new position = old position + speed * elapsed time
     // which will ensure the game runs at the same speed for
     // all computers.
+// this.move += (Math.floor(Math.random()*4));
+} else {
+  this.x = this.resetenemy;
+
+}
 };
 
 // Draw the enemy on the screen, required method for game
@@ -59,19 +74,13 @@ Player.prototype.handleInput = function (playerarrowkeys) {
 
 //Now instantiate your objects.the process of creating objects from a class is called instantiation
 //It means allocating memory for a new  object and returning a reference to that memory.
-
-var enemyA = new Enemy(100, 50, 145);
- var enemyB = new Enemy(100, 220, 50);
- var enemyC = new Enemy(100, 130, 200);
-var allEnemies = [enemyA, enemyB, enemyC];
-
 // Place all enemy objects in an array called allEnemies
-var allEnemies = [enemyA, enemyB, enemyC];
- // allEnemies.push(enemyA, enemyB, enemyC);
 // Place the player object in a variable called player
 var player = new Player();
-
-
+var enemyA = new Enemy(0, 45, 145);
+ var enemyB = new Enemy(37, 220, 120);
+ var enemyC = new Enemy(99, 130, 90);
+var allEnemies = [enemyA, enemyB, enemyC];
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
