@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function () {
+var Enemy = function (x,y,move) {
     this.x = x;// Variables applied to each of our instances go here,
     this.y = y;// we've provided one for you to get started
     this.move = move;
