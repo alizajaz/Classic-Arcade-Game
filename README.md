@@ -61,16 +61,18 @@ The following are some steps that i apply for this project.  Hope it might help 
 
 ```sh
 1. "Where should i start!!!" Its okay to have that thought.
-2.My initial thought was, i want to see player or enemies pop up. Also,I can see the enemy variable. Should I create enemy and player at once? 
+2.My initial thought was, i want to see player or enemies pop up. Also,I can see the enemy variable. Should I create enemy and player at
+once? 
 3. Start focusing one of the game entities at the time. afterthat ,try commenting out any code in engine.js that refers to player at first. you will be able to see screen. (now i am in process of creating Enemy class and I realized they are just moving in one direction.)
 4. ERROR :Enemies not define. This actually hunt me at the beginning. All you have to do was make empty array allEnemies= []; You want to uncomment //updateEntities(dt);
 5. My initial thought was setting the value inside array of player and enemies which looks like this  this.xaxis=[0,10,20,30,40,50];
-6. Then,i set the  value of x and y for the position of player and change my  this.sprite = 'images/char-pink-girl.png'; with update and render. I see  error (Uncaught TypeError: Failed to execute 'drawImage' on 'CanvasRenderingContext2D': The provided value is not of type '(CSSImageValue or HTMLImageElement or SVGImageElement or HTMLVideoElement or HTMLCanvasElement or ImageBitmap or OffscreenCanvas)' I keep getting this error and unable to see my player). To fix this, Resources.load([ 'images/char-pink-girl.png']); I tried to put different image , therefore I have to modify in Resources.load.
+6. Then,i set the  value of x and y for the position of player and change my  this.sprite = 'images/char-pink-girl.png'; with update 
+and render. I see  error (Uncaught TypeError: Failed to execute 'drawImage' on 'CanvasRenderingContext2D': The provided value is not of type '(CSSImageValue or HTMLImageElement or SVGImageElement or HTMLVideoElement or HTMLCanvasElement or ImageBitmap or OffscreenCanvas)' I keep getting this error and unable to see my player). To fix this, Resources.load([ 'images/char-pink-girl.png']); I tried to put different image , therefore I have to modify in Resources.load.
 7. k and forth with app.js, engine.js, resources.js. I got stuck with why row*83? what does this mean? The un-faded, un-transperarent part is 83 px tall.
-6. Now, i have create enemy class. you can see update the enemy position,collision and rendering and pushing object inside all enemies.
-7. In my head i had so many question, is there any specific formula to increase the speed of bug ? Or do i need to put value in dt?
+8. Now, i have create enemy class. you can see update the enemy position,collision and rendering and pushing object inside all enemies.
+9. In my head i had so many question, is there any specific formula to increase the speed of bug ? Or do i need to put value in dt?
 for bug speed you can use 3 argument when you create a new Enemy or set move to a random value inside the constructor. please make sure to comment updateEntities.
-for collision , i take help from this site. 
+10.for collision , i take help from this site. 
 https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 ```
 
