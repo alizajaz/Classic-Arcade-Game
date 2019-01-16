@@ -34,7 +34,7 @@ Additional Resources Sites:
 > 4.https://www.google.com/
 
 
-This are some sites that  *actually* help me get through this project.
+
 
 ### How the Game Work
 You will have a player and Enemy. The goal of the player is to reach the water, without colliding into any one of the enemies.
@@ -44,7 +44,8 @@ You will have a player and Enemy. The goal of the player is to reach the water, 
 | Strategies | Description. |
 | ------ | ------ |
 | Player(Move)| The player should be able move left,right, up ,down |
-| Enemy speed| you can use math.random methods |
+| Enemy speed| for bug speed you can use 3 argument when you create a new Enemy or set move to a random value inside the constructor. 
+ |
 | collide | Once a the player collides with an enemy, the game is reset and the player moves back to the starting square|
 |Winner | Once the player reaches the water (i.e., the top of the game board), the game is won |
 
@@ -112,6 +113,6 @@ Provide a detailed commit description.
 ```
 Step 5.
 ```sh
-Create a pull reques
+Create a pull request
 
 
