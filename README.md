@@ -70,7 +70,8 @@ The following are some steps that i apply for this project.  Hope it might help 
 6. Now, i have create enemy class. you can see update the enemy position,collision and rendering and pushing object inside all enemies.
 7. In my head i had so many question, is there any specific formula to increase the speed of bug ? Or do i need to put value in dt?
 for bug speed you can use 3 argument when you create a new Enemy or set move to a random value inside the constructor. please make sure to comment updateEntities.
-for collision , i take help from 2 sites. 
+for collision , i take help from this site. 
+https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 ```
 
 For Outcome
