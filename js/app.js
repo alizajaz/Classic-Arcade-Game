@@ -23,7 +23,7 @@ Enemy.prototype.update = function (dt) {
     //new position = old position + speed * elapsed time
     // which will ensure the game runs at the same speed for
     // all computers.
-// this.move += (Math.floor(Math.random()*4));
+
 }
  else {
   this.x = this.resetenemy;
@@ -42,11 +42,7 @@ Enemy.prototype.update = function (dt) {
         player.y = 406;
     }
 };
-// if (rect1.x < rect2.x + rect2.width &&
-//    rect1.x + rect1.width > rect2.x &&
-//    rect1.y < rect2.y + rect2.height &&
-//    rect1.y + rect1.height > rect2.y) {
-    // collision detected!
+
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function () {
