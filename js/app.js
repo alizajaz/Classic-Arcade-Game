@@ -2,7 +2,6 @@
 var Enemy = function (x, y, move) {
     this.x = x; // Variables applied to each of our instances go here,
     this.y = y; // we've provided one for you to get started
-    // this.move = move;
     this.resetenemy = -101;
     this.canvaswidth = 505;
     this.move = Math.floor(Math.random() * (600 - 100)) + 100;
@@ -18,18 +17,36 @@ var Enemy = function (x, y, move) {
 Enemy.prototype.update = function (dt) {
     // You should multiply any movement by the dt parameter
 
-    if (this.x < this.canvaswidth ) {
-        this.x += this.move * dt;
+    if (this.x < this.canvaswidth) {
+      this.x += this.move * dt;
 
     //new position = old position + speed * elapsed time
     // which will ensure the game runs at the same speed for
     // all computers.
 // this.move += (Math.floor(Math.random()*4));
-} else {
+}
+ else {
   this.x = this.resetenemy;
 
 }
+//};
+
+
+    // Check for collision between player and enemies
+    //https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+    if (player.x < this.x + 80 &&
+        player.x + 37 > this.x &&
+        player.y < this.y + 50 &&
+        60 + player.y > this.y) {
+        player.x = 202;
+        player.y = 406;
+    }
 };
+// if (rect1.x < rect2.x + rect2.width &&
+//    rect1.x + rect1.width > rect2.x &&
+//    rect1.y < rect2.y + rect2.height &&
+//    rect1.y + rect1.height > rect2.y) {
+    // collision detected!
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function () {
@@ -75,9 +92,9 @@ Player.prototype.handleInput = function (playerarrowkeys) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var player = new Player();
-var enemyA = new Enemy(0, 45, 145);
- var enemyB = new Enemy(37, 220, 120);
- var enemyC = new Enemy(99, 130, 90);
+var enemyA = new Enemy(10, 45, 125);
+var enemyB = new Enemy(37, 220, 225);
+var enemyC = new Enemy(99, 130, 335);
 var allEnemies = [enemyA, enemyB, enemyC];
 
 // This listens for key presses and sends the keys to your
