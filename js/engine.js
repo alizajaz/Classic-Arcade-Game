@@ -78,8 +78,8 @@ var Engine = (function(global) {
      * on the entities themselves within your app.js file).
      */
     function update(dt) {
-        updateEntities(dt);
-        // checkCollisions();
+      updateEntities(dt);
+      //checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -173,7 +173,7 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-pink-girl.png'
     ]);
     Resources.onReady(init);
 
