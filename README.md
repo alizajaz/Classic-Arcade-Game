@@ -19,6 +19,9 @@ For detailed instructions on how to get started, check out this [guide](https://
 
   - If you like to start from scratch, you can build your own project or you can simply download the starter code through following link:
   - https://github.com/udacity/frontend-nanodegree-arcade-game
+  
+  # link for my project
+  https://alizajaz.github.io/Classic-Arcade-Game/
 
 
 # Prerequisites
